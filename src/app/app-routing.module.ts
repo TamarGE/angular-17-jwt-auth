@@ -9,14 +9,24 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 
+import { ManagementComponent } from './root/management/management.component';
+import { HomeManagementComponent } from './management/home-management/home-management.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'home/:id', component: HomeManagementComponent },
+
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+
+  { path: 'root', component: ManagementComponent },
+
+
+
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

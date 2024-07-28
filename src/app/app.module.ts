@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,10 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { ManagementComponent } from './root/management/management.component';
+import { ListManagementComponent } from './root/list-management/list-management.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,13 +29,16 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    ManagementComponent,
+    ListManagementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

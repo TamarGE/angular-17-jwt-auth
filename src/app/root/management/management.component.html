@@ -1,0 +1,128 @@
+
+<div class="row">
+<div class="col mt-4">
+  <h2>Administradores</h2>
+</div>
+
+<div class="col float-left">
+
+
+  <button class="btn btn-outline-secondary mt-4 " type="button" (click)="onClickUsers()">Ver Usuarios del Sistema</button>
+  <button class="btn btn-outline-secondary mt-4  " type="button" (click)="onClickManagement()">Datos del la Administracion</button>
+
+</div>
+</div>
+
+<div class="row">
+
+
+  <div class="col col-4">
+     <div class="row">
+
+
+      <div class="col col-12 mx-auto">
+
+      <app-list-management  (selectedMgm)="onSelectMgn($event)" ></app-list-management>
+
+      <div class="mt-5">
+
+      <button class="btn btn-dark float-left" type="button" (click)="onNewRecord()" *ngIf="!this.isFormModified">Nuevo</button>
+      </div>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="col">
+  <div class="p-2 ">
+
+
+    <div class="" *ngIf="this.viewOption=='management'" >
+      <h3>Conpania de Administracion</h3>
+      <form [formGroup]="managementForm">
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input class="form-control" formControlName="name">
+          <label>Email:</label>
+          <input class="form-control" formControlName="email">
+          <label>Telefono:</label>
+          <input class="form-control" formControlName="phone">
+
+          </div>
+        </form>
+
+        <form [formGroup]="userForm">
+
+          <div *ngIf="isFormNew">
+                <h3>Usuario Administrador</h3>
+                <div class="form-group" >
+                    <label for="name">Usuario:</label>
+                    <input class="form-control" formControlName="username" id="username" name="username">
+                    <label for="email">Email:</label>
+                    <input class="form-control" formControlName="emailUser" name="emailUser">
+                    <label for="phone">Clave:</label>
+                    <input class="form-control" formControlName="password" id="password">
+                 </div>
+          </div>
+        </form>
+
+
+      <div class="">
+
+        <button class="btn btn-dark  float-left" type="button" (click)="onModifyRecord()" *ngIf="!this.isFormModified">Editar</button>
+        <button class="btn btn-dark  float-right" type="button" (click)="onSaveRecord()" *ngIf="this.isFormModified">Guardar</button>
+    </div>
+    </div>
+
+    <div class="mt-5" *ngIf="this.viewOption!='management'" >
+<div><h2>Usuarios de  {{this.edtMgn.name}}</h2></div>
+<div>
+  <table class="table  table-striped ">
+    <thead class="thead-light">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Roles del Sistema</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of mgnUser; let i = index">
+        <td>{{item.id}}</td>
+        <td>{{item.username}}</td>
+        <td><label *ngFor="let itemR of item.roles; let j = index">{{itemR.name}}&nbsp;  </label></td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+</div>
+</div>
+
+
+
+<!-- gvlkhjjkgldf
+sdfvsdlkjhfkajshd -->
+
+<!-- kseñlfkñsldklñ
+
+
+
+
+-->

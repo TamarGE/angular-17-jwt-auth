@@ -1,0 +1,9 @@
+<p>Listado de Administraciones</p>
+
+
+<ul class="list-group" *ngFor=" let item of this.mgnList, let iaas index">
+
+  <a class="list-group-item list-group-item-action active mb-1" (click)="onItemClick(iaas)">{{item.name}}</a>
+
+</ul>
+

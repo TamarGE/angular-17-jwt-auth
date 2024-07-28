@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import { Management } from '../interfaces/interfacesMgn';
+import { Router} from '@angular/router';
+
+
 
 @Component({
   selector: 'app-home',
@@ -9,7 +13,9 @@ import { UserService } from '../_services/user.service';
 export class HomeComponent implements OnInit {
   content?: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router:Router)
+
+ { }
 
   ngOnInit(): void {
     this.userService.getPublicContent().subscribe({
@@ -29,5 +35,14 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+   }
+  // fin nginit
+
+  onSelectMgn(selMgn:Management) {
+    console.log(" Dentro del Padre");
+    console.log(selMgn.id);
+    this.router.navigate(['home/', selMgn.id]);
   }
+
+
 }
