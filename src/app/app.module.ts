@@ -18,6 +18,18 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { ManagementComponent } from './root/management/management.component';
 import { ListManagementComponent } from './root/list-management/list-management.component';
 
+import { SelectApartComponent } from './apart/select-apart/select-apart.component';
+
+import { FilterApartPipe } from './_pipes/filter-apart.pipe';
+import { SelectSummaryComponent } from './summary/select-summary/select-summary.component';
+import { SelectFlatComponent } from './apart/select-flat/select-flat.component';
+import { FilterFlatPipe } from './_pipes/filter-flat.pipe';
+import { EditFlatComponent } from './apart/edit-flat/edit-flat.component';
+import { EditSummaryComponent } from './summary/edit-summary/edit-summary.component';
+import { EditApartComponent } from './apart/edit-apart/edit-apart.component';
+
+
+
 
 
 @NgModule({
@@ -31,7 +43,17 @@ import { ListManagementComponent } from './root/list-management/list-management.
     BoardModeratorComponent,
     BoardUserComponent,
     ManagementComponent,
-    ListManagementComponent
+    ListManagementComponent,
+    SelectApartComponent,
+    FilterApartPipe,
+    SelectSummaryComponent,
+    SelectFlatComponent,
+    FilterFlatPipe,
+    EditFlatComponent,
+    EditSummaryComponent,
+    EditApartComponent,
+
+
   ],
   imports: [
     BrowserModule,

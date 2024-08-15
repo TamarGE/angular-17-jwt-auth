@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+     <h2>Nueva Unidad</h2>
+
+     <form [formGroup]="flatForm">
+     <label for="name">Nombre </label>
+     <input id="name" type="text" formControlName="name" class="form-control">
+     <label for="contact">Contacto </label>
+     <input id="contact" type="text" formControlName="contact" class="form-control">
+     <label for="phone">Telefono </label>
+     <input id="phone" type="text" formControlName="phone" class="form-control">
+     <label for="email">Email </label>
+     <input id="email" type="text" formControlName="email" class="form-control">
+     <label for="quota">Parte </label>
+     <input id="quota" type="number" formControlName="quota" class="form-control">
+
+
+
+   </form>
+ </div>
+
+     <div class="p-2">
+       <button type="button"  name="save" id="save"  class="btn btn-primary" (click)="onSaveClick();" >   Guardar   </button>
+       <button type="button"  name="save" id="save"  class="btn btn-primary float-right" (click)="onCancelClick();" >   Cancelar   </button>
+     </div>
+
+
+
+
+ </div>
+

@@ -1,0 +1,24 @@
+
+<div
+  class="table-responsive"
+>
+  <table
+    class="table table-primary"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Titulo</th>
+        <th scope="col">Total</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="" *ngFor="let item of this.summaryApart">
+        <td >{{item.title}}</td>
+        <td>{{item.total}}</td>
+        <td>{{item.state}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

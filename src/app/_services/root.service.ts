@@ -22,9 +22,12 @@ export class RootService {
     return this.http.get(API_URL + 'users/all', { responseType: 'text' });
   }
 
-  viewMgnUsers(idX:string): Observable<any> {
-    return this.http.post(API_URL + 'users/all/'+idX, { responseType: 'text' });
+
+  viewMgnUsers(idx:number): Observable<any> {
+    return this.http.post(API_URL + 'users/all'+ idx, { responseType: 'text' });
   }
+
+
 
 
 

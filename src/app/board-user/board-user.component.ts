@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
+import { StorageService } from '../_services/storage.service';
+import { Management } from '../interfaces/interfacesMgn';
 
 @Component({
   selector: 'app-board-user',
@@ -8,6 +10,13 @@ import { UserService } from '../_services/user.service';
 })
 export class BoardUserComponent implements OnInit {
   content?: string;
+
+  localMgn : Management = {id:0,name:"",phone:"",email:""}; // inicializo en blanco
+
+  //localMgn = StorageService()
+
+
+
 
   constructor(private userService: UserService) { }
 

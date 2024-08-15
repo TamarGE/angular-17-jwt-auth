@@ -1,5 +1,5 @@
 export interface Management {
-  id:string,
+  id:number,
   name: string;
   phone: string;
   email: string;
@@ -8,7 +8,7 @@ export interface Management {
 
 export interface NewManagement {
 
-  id?:string;
+  id?:number;
   name: string;
   phone: string;
   email: string;
@@ -38,7 +38,7 @@ export interface UserInt {
     email:string,
     owner:string,
     quota:number,  // 0-100
-    apartid: number,
+    apartId: number,
 
   }
 
@@ -49,8 +49,20 @@ export interface UserInt {
     direction:string,
     owner:string,
     part:number,
-    managementId:number;
+    managementId:number,
+    total:number,
+    fiscal:string,
+    acount:string
   }
 
+export interface Summary {
+  id:number,
+  title:string,
+  total:number,
+  income:number,
+  outflow:number,
+  state:string,
+  apartId:number
 
+}
 

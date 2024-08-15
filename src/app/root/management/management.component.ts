@@ -25,7 +25,7 @@ constructor(private RootService: RootService,
 
 
   managementForm = new FormGroup ({
-    id :new FormControl({value :'',disabled :true}),
+    id :new FormControl({value :0,disabled :true}),
     name: new FormControl({value :'',disabled :true}),
     email: new FormControl({value :'',disabled :true}),
     phone: new FormControl({value :'',disabled :true}),
@@ -48,7 +48,7 @@ constructor(private RootService: RootService,
   mgnList :any;
   mgnUser :any;
 
-  edtMgn : Management = {id:"",name:"",email:"",phone:""};;
+  edtMgn : Management = {id:0,name:"",email:"",phone:""};;
 
   edtUsr = {
     nameUsr:"",

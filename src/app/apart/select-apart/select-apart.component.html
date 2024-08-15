@@ -1,1 +1,30 @@
-<p>select-apart works!</p>
+
+{{this.messageError}}
+
+<div class="card mt-2 mb-2">
+  <div class="card-body">
+
+    <label for="search-text">Buscar</label>
+    <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+     placeholder="Enter text to search"
+      autofocus>
+
+  </div>
+
+ <table class="table table-dark table-striped ">
+  <tbody>
+    <tr   *ngFor="let item of aparts | filterApart:searchText  ">
+      <td>
+        <a
+        name="{{item.id}}"
+        id= "{{item.id}}"
+        class="btn btn-primary d-block"
+        (click)=" this.onItemClick(item);"
+        role="button"
+        >{{item.name}}</a></td>
+    </tr>
+  </tbody>
+ </table>
+
+
+</div>

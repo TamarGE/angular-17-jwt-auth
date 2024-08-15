@@ -11,6 +11,8 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 import { ManagementComponent } from './root/management/management.component';
 import { HomeManagementComponent } from './management/home-management/home-management.component';
+import { SelectSummaryComponent } from './summary/select-summary/select-summary.component';
+import { SelectApartComponent } from './apart/select-apart/select-apart.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,12 +23,29 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
+
+  { path: 'adminOLD',
+    children: [   {
+                    path: 'home',  // child route path
+                    component:  SelectApartComponent,  // child route component that the router renders
+                  },
+                  {
+                    path: 'apart',  // child route path
+                    component:  SelectApartComponent,  // child route component that the router renders
+                  },
+                  {
+                    path: 'summary',  // child route path
+                    component:  SelectSummaryComponent,  // child route component that the router renders
+                  },
+
+
+                ],
+  },
+
   { path: 'admin', component: BoardAdminComponent },
 
+
   { path: 'root', component: ManagementComponent },
-
-
-
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

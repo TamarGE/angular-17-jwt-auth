@@ -1,6 +1,97 @@
-<div class="container">
-  <header class="jumbotron">
 
-    <p>{{ content }}</p>
-  </header>
-</div>
+
+<h1>{{management.name}} </h1>
+
+
+
+
+  <div class="" *ngIf="selectedApart.id==0 ">
+    <div class="row">
+    <div class="col-3">
+
+      <app-select-apart (selectedApart)="onSelectApart($event) " [refresh]="this.refresh" ></app-select-apart>
+      <button type="button" class="btn btn-primary" (click)="onNewClick()"    >   Button  </button>
+    </div>
+
+    <div class="col">
+      CONTENIDO SIN SELECCIONAR APARTEMENTO
+
+      <div *ngIf="this.selectedAction=='NEWAPART'">
+        <app-edit-apart (result)="onRefreshApart($event);"></app-edit-apart>
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div *ngIf=" selectedApart.id!=0  "><h2>{{selectedApart.name}}</h2>
+    <div class="row">
+        <div class="col-3">
+          <nav class="nav nav-pills nav-justified nav-fill ">
+
+            <button   type="button"   name=""  id="btnAparts"   class="nav-item nav-link active" (click)=" onSelectAction('APART'); "  [ngClass]="{'active': selectedAction === 'APART'}" >
+
+              Vista General   </button>
+            <button   type="button" name=""  id="btnSummary"   class="nav-item nav-link " (click)=" onSelectAction('SUMMARY');" [ngClass]="{'active': selectedAction === 'SUMMARY'}"
+            >  Resumen       </button>
+
+          </nav>
+
+          <div *ngIf="selectedAction=='APART'||selectedAction=='NEWFLAT'">
+            <app-select-flat [apartId]="this.selectedApart.id"></app-select-flat>
+            <button   type="button"  class="btn btn-primary" id="newFlat" (click)="onNewFlatClick();" >Nueva Unidad  </button>
+
+
+          </div>
+
+
+          <div *ngIf="selectedAction=='SUMMARY'">
+            <app-select-summary [apartId]="this.selectedApart.id"> </app-select-summary>
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <div class="col">
+          <div class="block">
+                  <a  name="back" id="back"  class="btn btn-primary float-right"  (click)="onBack()" role="button">Volver</a>
+                </div>
+
+                <div *ngIf="selectedAction=='APART'">
+                  <app-edit-apart [selectApart]="this.selectedApart" (result)="onRefreshFlat($event)"></app-edit-apart>
+                </div>
+
+
+
+                <div *ngIf="selectedAction=='NEWFLAT'">
+                  <app-edit-flat [selectedFlat]="this.selectedFlat" (result)="onRefreshFlat($event)"></app-edit-flat>
+                </div>
+
+
+
+                  <div *ngIf="selectedAction=='APART'">
+
+                  </div>
+
+
+
+                  <div *ngIf="selectedAction=='SUMMARY'">
+                          <app-edit-summary></app-edit-summary>
+                  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+
+

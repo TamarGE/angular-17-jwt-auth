@@ -1,1 +1,28 @@
-<p>select-flat works!</p>
+
+<div>
+
+  <div class="card-body mb-4">
+
+    <label for="search-text">Buscar</label>
+    <input type="text" class="form-control" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText"
+     placeholder="Enter text to search"
+      autofocus>
+</div>
+<div class="mt-2">
+  <table class="table table-dark table-striped ">
+    <tbody>
+      <tr   *ngFor="let item of flatsApart | filterFlat:searchText  ">
+        <td>
+          <a
+          name="{{item.id}}"
+          id= "{{item.id}}"
+          class="btn btn-primary d-block text-left"
+          (click)=" this.onItemClick(item.id);"
+          role="button"
+          >{{item.name}} - {{item.contact}}</a></td>
+      </tr>
+    </tbody>
+   </table>
+  </div>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="card">
+ <div class="card-body">
+    <div *ngIf="selectApart.id==0">
+         <h2>Nuevo Edificio</h2>
+    </div>
+
+    <div *ngIf="selectApart.id!=0">
+      <h2>Editar Edificio</h2>
+    </div>
+
+
+
+    <form [formGroup]="apartForm">
+    <label for="name">Nombre: </label>
+    <input id="name" type="text" formControlName="name" class="form-control">
+    <label for="direction">Direccion: </label>
+    <input id="direction" type="text" formControlName="direction" class="form-control">
+    <label for="part">Parte: </label>
+    <input id="part" type="number" formControlName="part" class="form-control">
+    <label for="fical">Datos Fiscales: </label>
+    <input id="fiscal" type="text" formControlName="fiscal" class="form-control">
+    <label for="acount">Cuenta bancaria: </label>
+    <input id="acount" type="text" formControlName="acount" class="form-control">
+
+
+  </form>
+</div>
+
+    <div class="p-2">
+      <button type="button"  name="save" id="save"  class="btn btn-primary" (click)="onSaveClick();" >   Guardar   </button>
+      <button type="button"  name="save" id="save"  class="btn btn-primary float-right" (click)="onCancelClick();" >   Cancelar   </button>
+    </div>
+
+
+
+
+</div>
